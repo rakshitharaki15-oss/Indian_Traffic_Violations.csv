@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+
+vehicle_types = ["Bike", "Truck", "Car", "Scooter", "Auto Rickshaw", "Bus"]
+average_penalty = [5.0, 5.0, 5.0, 5.0, 4.9, 4.9]
+
+colors = ["#d17867", "#e9b39a", "#ead9cc", "#d9e2ef", "#b3ccf5", "#7a93d6"]
+
+plt.figure(figsize=(10, 6))
+plt.barh(vehicle_types, average_penalty, color=colors)
+
+plt.title("Vehicle Type vs Average Penalty Points")
+plt.xlabel("Average Penalty Points")
+plt.ylabel("Vehicle Type")
+
+for i, v in enumerate(average_penalty):
+    plt.text(v + 0.02, i, str(v), va='center')
+
+plt.tight_layout()
+plt.show()
